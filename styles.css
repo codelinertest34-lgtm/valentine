@@ -421,8 +421,11 @@ button:active {
 
 /* Mobile adjustments so captions never get cut off */
 @media (max-width: 640px) {
+    /* lift the caption overlay higher (6vh) so it won't be clipped on small screens */
+    .reel-caption-overlay { bottom: 6vh; padding-bottom: calc(12px + env(safe-area-inset-bottom, 18px)); }
     .reel-caption { max-width: 92%; }
-    .reel-video { max-height: calc(100vh - 140px); }
+    /* reduce video height more so caption has guaranteed space */
+    .reel-video { max-height: calc(100vh - 220px); }
 }
 
 .reel-caption strong { display: block; font-weight: 600; margin-bottom: 4px; }
