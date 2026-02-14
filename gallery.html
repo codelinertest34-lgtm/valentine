@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="gallery-container">
+        <header class="gallery-header">
+            <h1>Our Little Gallery 📸💖</h1>
+        </header>
+
+        <div class="gallery-grid">
+            <!-- Photo 1 - Replace assets/img1.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img1.jpeg" alt="Memory 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 1</div>
+            </div>
+
+            <!-- Photo 2 - Replace assets/img2.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img2.jpeg" alt="Memory 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 2</div>
+            </div>
+
+            <!-- Quote 1 -->
+            <div class="gallery-item quote-card">
+                <p class="quote-text">"You feel like home."</p>
+                <p class="quote-caption">— always you 💖</p>
+            </div>
+
+            <!-- Photo 3 - Replace assets/img3.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img3.jpeg" alt="Memory 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 3</div>
+            </div>
+
+            <!-- Photo 4 - Replace assets/img4.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img4.jpeg" alt="Memory 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 4</div>
+            </div>
+
+            <!-- Quote 2 -->
+            <div class="gallery-item quote-card">
+                <p class="quote-text">"My favorite place is next to you."</p>
+                <p class="quote-caption">— always you 💖</p>
+            </div>
+
+            <!-- Photo 5 - Replace assets/img5.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img5.jpeg" alt="Memory 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 5</div>
+            </div>
+
+            <!-- Photo 6 - Replace assets/img6.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img6.jpeg" alt="Memory 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 6</div>
+            </div>
+
+            <!-- Quote 3 -->
+            <div class="gallery-item quote-card">
+                <p class="quote-text">"Even ordinary days feel special with you."</p>
+                <p class="quote-caption">— always you 💖</p>
+            </div>
+
+            <!-- Photo 7 - Replace assets/img7.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img7.jpeg" alt="Memory 7" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 7</div>
+            </div>
+
+            <!-- Photo 8 - Replace assets/img8.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img8.jpeg" alt="Memory 8" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 8</div>
+            </div>
+
+            <!-- Quote 4 -->
+            <div class="gallery-item quote-card">
+                <p class="quote-text">"You’re my kind of forever."</p>
+                <p class="quote-caption">— always you 💖</p>
+            </div>
+
+            <!-- Photo 9 - Replace assets/img9.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img9.jpeg" alt="Memory 9" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 9</div>
+            </div>
+
+            <!-- Additional Quotes if needed -->
+            <div class="gallery-item quote-card">
+                <p class="quote-text">"If love had a face, it would look like you."</p>
+                <p class="quote-caption">— always you 💖</p>
+            </div>
+
+            <div class="gallery-item photo-card">
+                <img src="assets/img10.jpeg" alt="Memory 9" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 9</div>
+            </div>
+
+            <div class="gallery-item quote-card">
+                <p>"I choose you, again and again."</p>
+            </div>
+
+            <!-- Photo 12 - Replace assets/img12.jpg with your photo -->
+            <div class="gallery-item photo-card">
+                <img src="assets/img12.jpeg" alt="Memory 12" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder" style="display:none;">Photo 12</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Made with love 💗</p>
+        </footer>
+    </div>
+
+    <!-- Modal for photo lightbox -->
+    <div id="photo-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modal-image" src="" alt="Photo">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

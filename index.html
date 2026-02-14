@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Surprise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body class="center-viewport">
+    <!-- Map background (hidden so index uses same site gradient background) -->
+    <div id="map" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+    <!-- Locked view shown until Feb 14, 2026 -->
+    <div id="index-locked" class="index-locked">
+        <div class="card locked-card">
+            <h1>Locked 🔒</h1>
+            <p>Enter the password to unlock the surprise 💖</p>
+
+            <div class="lock-inputs">
+                <input id="index-password" type="password" placeholder="Enter password" maxlength="64" style="padding:10px;border-radius:8px;border:1px solid #eee;width:100%;box-sizing:border-box;margin-bottom:12px;">
+                <button id="index-unlock-btn" type="button" style="width:100%;padding:12px;border-radius:12px;border:none;background:linear-gradient(45deg,#ff6b6b,#ee5a24);color:#fff;font-weight:600;">Unlock</button>
+            </div>
+
+            <p class="small-note">Enter the password above to unlock ✨</p>
+        </div>
+    </div>
+
+    <!-- Main content (revealed after unlock) -->
+    <div id="index-main" style="display:none">
+    <div class="container">
+        <div class="card">
+            <h1>Heyy Love ❤️</h1>
+            <p>Ready for the surprise?</p>
+            <button onclick="window.location.href='page2.html'">Continue</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Background hearts animation for index page
+        document.addEventListener('DOMContentLoaded', function() {
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 6 + 6) + 's'; // 6-12s
+                heart.style.fontSize = (Math.random() * 60 + 80) + 'px'; // 80-140px
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 12000);
+            }
+            const heartInterval = setInterval(createHeart, 600);
+        });
+    </script>
+    <script>
+        // Initialize the map as background
+        document.addEventListener('DOMContentLoaded', function() {
+            const essen = [51.4556, 7.0116]; // Essen, Germany
+            const nagpur = [21.1458, 79.0882]; // Nagpur, India
+            const midpoint = [(essen[0] + nagpur[0]) / 2, (essen[1] + nagpur[1]) / 2];
+
+            const map = L.map('map').setView(midpoint, 3); // Centered on midpoint, zoom level 3
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Add markers
+            L.marker(essen).addTo(map)
+                .bindPopup('Essen, Germany - Starting point 💖')
+                .openPopup();
+
+            L.marker(nagpur).addTo(map)
+                .bindPopup('Nagpur, India - Destination ❤️');
+
+            // Add path (polyline)
+            L.polyline([essen, nagpur], {color: 'red', weight: 3, opacity: 0.7}).addTo(map)
+                .bindPopup('Our journey path - Distance: ' + (map.distance(essen, nagpur) / 1000).toFixed(0) + ' km 🌍');
+
+            // Fit map to show both points
+            map.fitBounds([essen, nagpur], {padding: [20, 20]});
+        });
+    </script>
+</body>
+</html>

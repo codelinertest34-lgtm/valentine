@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey 🗺️💞</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="journey-container">
+        <div class="hero-gif">
+            <img src="assets/journey.gif" alt="Journey GIF" class="top-gif" onerror="this.style.display='none';">
+        </div>
+        <h1>Our Journey 🗺️💞</h1>
+        <p>Little stops on our route ✨</p>
+
+        <div class="map-panel">
+            <p class="map-instructions">Tip: Click a pin on the map to jump to that stop. The active stop will be highlighted.</p>
+            <svg class="route-svg" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                        <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#d4a574" stroke-width="0.5" opacity="0.12"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" rx="18"/>
+                    <!-- route from bottom-left to top-right -->
+                    <path d="M 20 760 C 150 620 300 460 420 360 C 540 260 680 180 820 120 C 900 80 980 40 980 40" stroke="#8B4513" stroke-width="4" fill="none" stroke-dasharray="12,6" stroke-linecap="round"/>
+                    <!-- pins (data-stop matches stop-card index) with numeric labels -->
+                    <g class="pin-group">
+                        <circle cx="20" cy="760" r="9" fill="#FF69B4" class="pin" data-stop="1"/>
+                        <g class="pin-badge" data-stop="1">
+                            <circle class="pin-badge-bg" cx="36" cy="754" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="36" y="758" class="pin-badge-text">1</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="150" cy="620" r="9" fill="#FF69B4" class="pin" data-stop="2"/>
+                        <g class="pin-badge" data-stop="2">
+                            <circle class="pin-badge-bg" cx="166" cy="614" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="166" y="618" class="pin-badge-text">2</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="300" cy="460" r="9" fill="#FF69B4" class="pin" data-stop="3"/>
+                        <g class="pin-badge" data-stop="3">
+                            <circle class="pin-badge-bg" cx="316" cy="454" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="316" y="458" class="pin-badge-text">3</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="420" cy="360" r="9" fill="#FF69B4" class="pin" data-stop="4"/>
+                        <g class="pin-badge" data-stop="4">
+                            <circle class="pin-badge-bg" cx="436" cy="350" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="436" y="354" class="pin-badge-text">4</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="540" cy="260" r="9" fill="#FF69B4" class="pin" data-stop="5"/>
+                        <g class="pin-badge" data-stop="5">
+                            <circle class="pin-badge-bg" cx="556" cy="250" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="556" y="254" class="pin-badge-text">5</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="680" cy="180" r="9" fill="#FF69B4" class="pin" data-stop="6"/>
+                        <g class="pin-badge" data-stop="6">
+                            <circle class="pin-badge-bg" cx="696" cy="170" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="696" y="174" class="pin-badge-text">6</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="820" cy="120" r="9" fill="#FF69B4" class="pin" data-stop="7"/>
+                        <g class="pin-badge" data-stop="7">
+                            <circle class="pin-badge-bg" cx="836" cy="110" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="836" y="114" class="pin-badge-text">7</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="900" cy="80" r="9" fill="#FF69B4" class="pin" data-stop="8"/>
+                        <g class="pin-badge" data-stop="8">
+                            <circle class="pin-badge-bg" cx="916" cy="70" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="916" y="74" class="pin-badge-text">8</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="960" cy="50" r="9" fill="#FF69B4" class="pin" data-stop="9"/>
+                        <g class="pin-badge" data-stop="9">
+                            <circle class="pin-badge-bg" cx="976" cy="40" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="976" y="44" class="pin-badge-text">9</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="980" cy="40" r="9" fill="#FF69B4" class="pin" data-stop="10"/>
+                        <g class="pin-badge" data-stop="10">
+                            <circle class="pin-badge-bg" cx="996" cy="30" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="996" y="34" class="pin-badge-text">10</text>
+                        </g>
+                    </g>
+                    <g class="pin-group">
+                        <circle cx="990" cy="30" r="9" fill="#FF69B4" class="pin" data-stop="11"/>
+                        <g class="pin-badge" data-stop="11">
+                            <circle class="pin-badge-bg" cx="1006" cy="20" r="12" fill="#fff" stroke="#e91e63" stroke-width="1" />
+                            <text x="1006" y="24" class="pin-badge-text">11</text>
+                        </g>
+                    </g>
+            </svg>
+
+            <div class="stop-card stop-1 left">
+                <h3>The First Hello 💫</h3>
+                <p>That moment you entered my world, everything felt brighter.</p>
+                <div class="media">
+                    <img src="assets/j1.jpg" alt="First hello" class="thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="thumb placeholder" style="display:none;">📷<span>Add photo</span></div>
+                </div>
+            </div>
+            <div class="stop-card stop-2 right">
+                <h3>The First Smile 😄</h3>
+                <p>Your smile became my favorite kind of peace.</p>
+                <div class="media">
+                    <img src="assets/j2.jpg" alt="First smile" class="thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="thumb placeholder" style="display:none;">📷<span>Add photo</span></div>
+                </div>
+            </div>
+            <div class="stop-card stop-3 left">
+                <h3>Little Talks ☕</h3>
+                <p>The way we talk… it feels easy, warm, and real.</p>
+                <div class="media">
+                    <img src="assets/j3.jpg" alt="Little talks" class="thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="thumb placeholder" style="display:none;">📷<span>Add photo</span></div>
+                </div>
+            </div>
+            <div class="stop-card stop-4 right">
+                <h3>A Memory I Keep 💌</h3>
+                <p>Some moments stay with you forever—this is one of mine.</p>
+                <div class="media">
+                    <img src="assets/j4.jpg" alt="Memory kept" class="thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="thumb placeholder" style="display:none;">📷<span>Add photo</span></div>
+                </div>
+            </div>
+            <div class="stop-card stop-5 left">
+                <h3>Today 💖</h3>
+                <p>I'm grateful… for you, for us, for this.</p>
+                <div class="media">
+                    <img src="assets/j5.jpg" alt="Today" class="thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="thumb placeholder" style="display:none;">📷<span>Add photo</span></div>
+                </div>
+            </div>
+            <div class="stop-card stop-6 right">
+                <h3>The Future ✨</h3>
+                <p>More laughs, more love, more memories—together.</p>
+                <div class="media">
+                    <img src="assets/j6.jpg" alt="The future" class="thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="thumb placeholder" style="display:none;">📷<span>Add photo</span></div>
+                </div>
+            </div>
+            <div class="stop-card stop-7 left">
+                <h3>First Trip Together 🚗</h3>
+                <p>That little road trip where we sang terribly but laughed a lot.</p>
+            </div>
+            <div class="stop-card stop-8 right">
+                <h3>Hidden Cafe ☕️</h3>
+                <p>The cozy corner where we had hours of talk and warm drinks.</p>
+            </div>
+            <div class="stop-card stop-9 left">
+                <h3>Festival Night 🎇</h3>
+                <p>Fireworks, lights, and a promise of many more celebrations.</p>
+            </div>
+            <div class="stop-card stop-10 right">
+                <h3>Home 💞</h3>
+                <p>Where we laugh, rest, and build the little world we love.</p>
+            </div>
+            <div class="stop-card stop-11 left">
+                <h3>Memory Match Game 🧩</h3>
+                <p>A little game to unlock sweet compliments and match our hearts together.</p>
+                <div class="media">
+                    <div class="thumb placeholder">
+                        <span class="ph-ico">🧩</span>
+                        <span class="ph-text">Play Game</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Made with love 💗</p>
+        </footer>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

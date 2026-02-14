@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Will you be my Valentine?">
+</head>
+<body class="center-viewport">
+
+    <!-- Intro overlay shown only on page2 for 1.5s -->
+    <div id="page2-intro" class="intro-overlay">
+        <div class="intro-popup">
+            <h2 class="intro-title">Answer the most important question first 💖</h2>
+        </div>
+    </div>
+
+    <div id="page2-main" class="hidden">
+    <div id="mainCard" class="container">
+        <div class="card">
+            <!-- Top-centered GIF inside the card -->
+            <img id="valentine-gif" class="card-gif" src="https://media.tenor.com/DXs3gd7Ce0kAAAAi/bubu-dudu-sseeyall.gif" alt="cute gif">
+
+            <div class="card-content">
+                <h1 class="question">Will you be my Valentine? 💖</h1>
+
+                <div id="buttons-row" class="buttons-row">
+                    <button id="yes-btn" class="primary">Yes 😍</button>
+                    <button id="no-btn" class="secondary">No 🙈</button>
+                </div>
+
+                <div id="no-message" class="no-message" aria-live="polite"></div>
+                <div id="good-choice" class="good-choice" style="display:none">Good choice 😘</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

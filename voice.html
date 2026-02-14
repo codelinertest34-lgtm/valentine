@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Audio 💖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="center-wrapper">
+        <div class="center-box">
+            <!-- Password Gate -->
+            <div id="gate" class="container">
+                <div class="card gate-card">
+                    <br>
+                    <h1>Secret Audio 🔒</h1>
+                    <p>Only for you 💖</p>
+                    <input type="password" id="password-input" placeholder="Enter password..." maxlength="20">
+                    <button id="unlock-btn" class="primary">Unlock</button>
+                    <p class="hint">Hint: a cute word 😉</p>
+                    <div id="error-message" class="error-message"></div>
+                </div>
+            </div>
+
+            <!-- Audio Player Section -->
+            <div id="audio-section" class="container hidden">
+                <div class="card audio-card">
+                    <div class="hero-gif">
+                        <img src="https://media.tenor.com/BDP5eJeyZPQAAAAi/tkthao219-bubududu.gif" alt="cute gif" class="top-gif">
+                    </div>
+                    <h1>🎧 Hear something</h1>
+                    <p>Close your eyes for a second…</p>
+
+                    <!-- Custom Audio Controls -->
+                    <div class="audio-controls">
+                        <button id="play-pause-btn" class="play-btn">▶️</button>
+
+                        <div class="progress-container">
+                            <span id="current-time">0:00</span>
+                            <input type="range" id="progress-bar" value="0" min="0" max="100" step="0.1">
+                            <span id="duration">0:00</span>
+                        </div>
+
+                        <div class="volume-container">
+                            <span>🔊</span>
+                            <input type="range" id="volume-slider" value="50" min="0" max="100">
+                        </div>
+                    </div>
+
+                    <!-- Animated Equalizer -->
+                    <div class="equalizer" id="equalizer">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+
+                    <!-- Lock Again Button -->
+                    <button id="lock-again-btn" class="secondary lock-btn">Lock again 🔒</button>
+
+                    <!-- Audio Element -->
+                    <audio id="audio-player" preload="metadata">
+                        <source src="assets/new.m4a" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
