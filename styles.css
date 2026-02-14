@@ -406,15 +406,23 @@ button:active {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 20px;
+    /* leave space for mobile safe-area and readable caption */
+    padding: 20px 20px calc(20px + env(safe-area-inset-bottom, 16px));
     background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
     pointer-events: none;
+    z-index: 6;
 }
 
 .reel-caption {
     color: #fff;
     max-width: 75%;
     text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Mobile adjustments so captions never get cut off */
+@media (max-width: 640px) {
+    .reel-caption { max-width: 92%; }
+    .reel-video { max-height: calc(100vh - 140px); }
 }
 
 .reel-caption strong { display: block; font-weight: 600; margin-bottom: 4px; }

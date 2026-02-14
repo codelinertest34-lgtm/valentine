@@ -265,11 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const lastIndex = Math.max(0, count - 1);
             const pool = [];
             for (let i = 0; i < lastIndex; i++) pool.push(i);
-            // Fisher-Yates shuffle
-            for (let i = pool.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [pool[i], pool[j]] = [pool[j], pool[i]];
-            }
+            // Sequential order (no shuffle) — keep the last placeholder fixed at the end
             sequenceOrder = pool.concat([lastIndex]);
             sequencePos = 0;
             sequenceActive = true;
