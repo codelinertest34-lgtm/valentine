@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+
+
     // Page 2 intro popup timeout (kept local and isolated)
     (function initPage2IntroPopupScope() {
         if (!document.querySelector('#page2-intro')) return;
@@ -788,6 +790,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Journey page lock (mirrors voice.html)
+    (function initJourneyLock() {
+        const journeyUnlockBtn = document.getElementById('journey-unlock-btn');
+        const journeyPasswordInput = document.getElementById('journey-password-input');
+        const journeyGate = document.getElementById('journey-gate');
+        const journeySection = document.getElementById('journey-section');
+        const journeyError = document.getElementById('journey-error-message');
+        const journeyLockAgainBtn = document.getElementById('journey-lock-again-btn');
+
+        if (!journeyUnlockBtn || !journeyPasswordInput || !journeyGate || !journeySection) return;
+
+        const correctPassword = 'sheenu@34';
+
+        journeyUnlockBtn.addEventListener('click', function() {
+            const entered = (journeyPasswordInput.value || '').toLowerCase().trim();
+            if (entered === correctPassword) {
+                if (journeyError) journeyError.textContent = '';
+                journeyGate.classList.add('hidden');
+                journeySection.classList.remove('hidden');
+            } else {
+                if (journeyError) journeyError.textContent = 'Wrong password! Try again 😊';
+                journeyPasswordInput.value = '';
+                journeyPasswordInput.focus();
+            }
+        });
+
+        journeyPasswordInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') journeyUnlockBtn.click(); });
+
+        if (journeyLockAgainBtn) {
+            journeyLockAgainBtn.addEventListener('click', function() {
+                journeySection.classList.add('hidden');
+                journeyGate.classList.remove('hidden');
+                journeyPasswordInput.value = '';
+                if (journeyError) journeyError.textContent = '';
+                journeyPasswordInput.focus();
+            });
+        }
+    })();
+
     // Helper function to format time
     function formatTime(seconds) {
         if (isNaN(seconds)) return '0:00';
@@ -847,8 +888,8 @@ function initQuiz() {
 
     document.getElementById('next-btn').addEventListener('click', nextQuestion);
     document.getElementById('retry-btn').addEventListener('click', retryQuiz);
-    document.getElementById('note-result-btn').addEventListener('click', () => window.location.href = 'note.html');
-    document.getElementById('library-result-btn').addEventListener('click', () => window.location.href = 'gallery.html');
+    document.getElementById('note-result-btn').addEventListener('click', () => { window.location.href = 'note.html'; });
+    document.getElementById('library-result-btn').addEventListener('click', () => { window.location.href = 'gallery.html'; });
 }
 
 function showQuestion(index) {
@@ -1449,7 +1490,7 @@ function initNewMemoryMatch() {
 
     // Event listeners
     playAgainBtn.addEventListener('click', resetGame);
-    backBtn.addEventListener('click', () => window.location.href = 'page3.html');
+    backBtn.addEventListener('click', () => { window.location.href = 'page3.html'; });
 
     // Initialize game
     createBoard();

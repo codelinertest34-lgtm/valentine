@@ -7,10 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="journey-page">
-    <div class="journey-container">
-        <img src="https://media.tenor.com/pUQGNMgYn1cAAAAi/tkthao219-bubududu.gif" class="top-gif" alt="">
-        <h1>Our Journey 🗺️</h1>
-        <p>A few moments… and many more to come ✨</p>
+    <!-- Password gate (locked by default) -->
+    <div id="journey-gate" class="container">
+        <div class="card gate-card">
+            <br>
+            <h1>Our Journey 🔒</h1>
+            <p>Only for you 💖</p>
+            <input type="password" id="journey-password-input" placeholder="Enter password..." maxlength="20">
+            <button id="journey-unlock-btn" class="primary">Unlock</button>
+            <p class="hint">Hint: a cute word 😉</p>
+            <div id="journey-error-message" class="error-message"></div>
+        </div>
+    </div>
+
+    <div id="journey-section" class="container hidden">
+        <div class="journey-container">
+            <img src="https://media.tenor.com/pUQGNMgYn1cAAAAi/tkthao219-bubududu.gif" class="top-gif" alt="">
+            <h1>Our Journey 🗺️</h1>
+            <p>A few moments… and many more to come ✨</p>
+        <button id="journey-lock-again-btn" class="secondary lock-btn" style="margin-bottom:12px;">Lock again 🔒</button>
 
         <div class="timeline">
             <div class="timeline-item reveal">
@@ -132,6 +147,7 @@
             <p>Made with love 💗</p>
         </footer>
 
+    </div>
     </div>
     <!-- Image Modal -->
     <div class="modal-overlay" id="image-modal">

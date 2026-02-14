@@ -28,6 +28,8 @@ body {
     min-height: 100vh;
 }
 
+
+
 /* Utility class to prevent scrolling */
 .no-scroll {
     overflow: hidden;
@@ -1578,6 +1580,17 @@ body:has(.reasons-grid) .card {
     max-width: 450px;
 }
 
+/* Ensure the journey lock gate is vertically centered on all viewports */
+#journey-gate {
+    /* make the gate take full viewport height so its internal flex centering works */
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 28px 16px; /* small inset on mobile */
+    display: flex; /* reinforce centering (inherits .container but safe to repeat) */
+    align-items: center;
+    justify-content: center;
+}
+
 .gate-card input[type="password"] {
     width: 100%;
     padding: 15px;
@@ -1878,7 +1891,7 @@ footer { margin-top:auto; }
     height: 100%;
 }
 
-/* Mobile (<=767px): Keep current scrolling layout */
+/* Mobile (<=767px): Keep current scrolling layout (center the white box) */
 @media (max-width: 767px) {
     html, body {
         height: auto;
@@ -1886,18 +1899,30 @@ footer { margin-top:auto; }
         overflow-x: hidden;
     }
 
+    /* center the single white card both vertically & horizontally */
     .page3-wrapper {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; /* ensure vertical centering */
         padding: 12px; /* small horizontal inset so white box doesn't touch screen */
     }
 
     .page3-box {
         width: 100%;
-        margin: 24px auto;
+        margin: 0 auto;
         padding: 20px;
         background: #ffffff;
         border-radius: 18px;
         box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        max-height: calc(100vh - 48px); /* keep box within viewport */
+        overflow: auto; /* allow internal scrolling when needed */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* allow inner content to flow when the box scrolls */
+    .page3-inner {
+        overflow: visible;
     }
 }
 
@@ -3326,7 +3351,7 @@ body.note-page .note-inner {
 .since-inner { display:flex; flex-direction:column; align-items:center; gap:14px; }
 
 .since-inner .hero-gif { display:flex; justify-content:center; }
-.since-inner .top-gif { width: 120px; height: auto; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+.since-inner .top-gif { width: 120px; height: 120px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
 
 .since-heading { margin:0; font-size:1.9rem; color:#e91e63; text-align:center; }
 .since-subhead { margin:0; color:#666; text-align:center; }
@@ -3349,14 +3374,14 @@ body.note-page .note-inner {
 @media (max-width: 768px) {
     .since-wrapper { padding: 28px; }
     .since-box { padding: 20px; }
-    .since-inner .top-gif { width: 95px; }
+    .since-inner .top-gif { width: 95px; height: 95px; }
     .since-timer { font-size: 1.45rem; padding: 10px 14px; }
 }
 
 @media (max-width: 480px) {
     .since-wrapper { padding: 20px; }
     .since-box { padding: 18px; border-radius: 20px; }
-    .since-inner .top-gif { width: 82px; }
+    .since-inner .top-gif { width: 82px; height: 82px; }
     .since-timer { font-size: 1.1rem; padding: 8px 12px; }
 }
 
